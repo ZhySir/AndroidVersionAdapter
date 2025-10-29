@@ -20,15 +20,15 @@
 
 ## 适配流程
 
-* 这里以适配 `Android 15` 为例子，第一步将主模块中的 `build.gradle` 文件中修改 `targetSdkVersion` 和 `compileSdkVersion` 这两个的值
+* 这里以适配 `Android 16` 为例子，第一步将主模块中的 `build.gradle` 文件中修改 `targetSdkVersion` 和 `compileSdkVersion` 这两个的值
 
 ```groovy
 android {
 
-    compileSdkVersion 35
+    compileSdkVersion 36
     defaultConfig {
         ......
-        targetSdkVersion 35
+        targetSdkVersion 36
     }
 }
 ```
@@ -36,7 +36,7 @@ android {
 * 接下来在代码中做一些版本的判断，并且做好新版本的适配和旧版本的兼容
 
 ```java
-if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.VANILLA_ICE_CREAM) {
+if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.BAKLAVA) {
     ......
 } else {
     ......
@@ -44,7 +44,7 @@ if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.VANILLA_ICE_CREAM) {
 ```
 
 ```java
-if (context.getApplicationInfo().targetSdkVersion >= Build.VERSION_CODES.VANILLA_ICE_CREAM) {
+if (context.getApplicationInfo().targetSdkVersion >= Build.VERSION_CODES.BAKLAVA) {
     ......
 } else {
     ......
@@ -61,6 +61,7 @@ if (context.getApplicationInfo().targetSdkVersion >= Build.VERSION_CODES.VANILLA
 
 | Android 版本 | API 等级 |      版本代号       | 市场占有率  |        发布时间       |
 | :--------:  | :-----: |:------------------:|:---------:| :------------------: |
+| Android 16  |    36   |      `BAKLAVA`     |  暂无数据  |  2025 年 6 月 10 日   |
 | Android 15  |    35   | `VANILLA_ICE_CREAM`|  10.06%  |  2024 年 10 月 15 日   |
 | Android 14  |    34   | `UPSIDE_DOWN_CAKE` |  33.44%  |  2023 年 10 月 10 日   |
 | Android 13  |    33   |     `TIRAMISU`     |  16.9%  |  2022 年 8 月 16 日   |
@@ -78,7 +79,7 @@ if (context.getApplicationInfo().targetSdkVersion >= Build.VERSION_CODES.VANILLA
 | Android 5.0 |    21   |     `LOLLIPOP`     |  1.8%  |  2014 年 10 月 15 日  |
 | Android 4.4 |    19   |      `KITKAT`      | < 0.01% |  2013 年 10 月 31 日  |
 
-* 市场占用率数据更新至 2023 年 11 月 5 日，数据统计主要参考以下链接：
+* 市场占用率数据更新至 2025 年 6 月 9 日，数据统计主要参考以下链接：
 
 * [Android API Levels](https://apilevels.com/)
 
@@ -99,6 +100,8 @@ if (context.getApplicationInfo().targetSdkVersion >= Build.VERSION_CODES.VANILLA
 * [符合 Google Play 的目标 API 级别要求](https://developer.android.google.cn/google/play/requirements/target-sdk?hl=zh-cn)
 
 ## 文档目录
+
+* [Android 16.0](#android-160)
 
 * [Android 15.0](#android-150)
 
@@ -123,6 +126,202 @@ if (context.getApplicationInfo().targetSdkVersion >= Build.VERSION_CODES.VANILLA
 * [Android 5.0 / 5.1](#android-50--51)
 
 * [Android 4.4](#android-44)
+
+## Android 16.0
+
+#### 新特性
+
+* [核心功能](https://developer.android.google.cn/about/versions/16/features?hl=zh-cn#core)
+
+    * [2025 年发布了两个 Android API](https://developer.android.google.cn/about/versions/16/features?hl=zh-cn#two-android)
+
+* [用户体验和系统界面](https://developer.android.google.cn/about/versions/16/features?hl=zh-cn#ux-sysui)
+
+    * [以进度为中心的通知](https://developer.android.google.cn/about/versions/16/features?hl=zh-cn#progress-centric-notifications)
+
+    * [预测性返回更新](https://developer.android.google.cn/about/versions/16/features?hl=zh-cn#predictive-back-updates)
+
+    * [更丰富的触感反馈](https://developer.android.google.cn/about/versions/16/features?hl=zh-cn#rich-haptics)
+
+* [开发者工作效率和工具](https://developer.android.google.cn/about/versions/16/features?hl=zh-cn#developer-productivity)
+
+    * [动态壁纸的内容处理](https://developer.android.google.cn/about/versions/16/features?hl=zh-cn#live-wallpapers)
+
+* [性能和电池](https://developer.android.google.cn/about/versions/16/features?hl=zh-cn#performance-battery)
+
+    * [系统触发的性能分析](https://developer.android.google.cn/about/versions/16/features?hl=zh-cn#system-triggered-profiling)
+
+    * [ApplicationStartInfo 中的启动组件](https://developer.android.google.cn/about/versions/16/features?hl=zh-cn#start-component)
+
+    * [更好的作业内省](https://developer.android.google.cn/about/versions/16/features?hl=zh-cn#feature-pending-job-reason-history)
+
+    * [自动调节刷新率](https://developer.android.google.cn/about/versions/16/features?hl=zh-cn#arr)
+
+    * [ADPF 中的裕度 API](https://developer.android.google.cn/about/versions/16/features?hl=zh-cn#headroom-apis)
+
+* [无障碍](https://developer.android.google.cn/about/versions/16/features?hl=zh-cn#accessibility)
+
+    * [改进了无障碍功能 API](https://developer.android.google.cn/about/versions/16/features?hl=zh-cn#a11y-apis)
+
+    * [将手机作为 LEA 助听器的语音通话麦克风输入](https://developer.android.google.cn/about/versions/16/features?hl=zh-cn#lea-phone-input)
+
+    * [LEA 助听器的环境音量控制](https://developer.android.google.cn/about/versions/16/features?hl=zh-cn#lea-ambient-volume)
+
+* [相机](https://developer.android.google.cn/about/versions/16/features?hl=zh-cn#camera)
+
+    * [混合自动曝光](https://developer.android.google.cn/about/versions/16/features?hl=zh-cn#hybrid-auto-exposure)
+
+    * [精确的色温和色调调整](https://developer.android.google.cn/about/versions/16/features?hl=zh-cn#color-temperature-tint)
+
+    * [相机夜间模式场景检测](https://developer.android.google.cn/about/versions/16/features?hl=zh-cn#night-mode-scene-detection)
+
+    * [动态照片拍摄 intent 操作](https://developer.android.google.cn/about/versions/16/features?hl=zh-cn#motion-photos)
+
+    * [UltraHDR 图片增强功能](https://developer.android.google.cn/about/versions/16/features?hl=zh-cn#ultra-hdr)
+
+* [图形](https://developer.android.google.cn/about/versions/16/features?hl=zh-cn#graphics)
+
+    * [使用 AGSL 实现自定义图形效果](https://developer.android.google.cn/about/versions/16/features?hl=zh-cn#agsl)
+
+* [连接](https://developer.android.google.cn/about/versions/16/features?hl=zh-cn#connectivity)
+
+    * [测距功能（增强型安全）](https://developer.android.google.cn/about/versions/16/features?hl=zh-cn#secure-ranging)
+
+    * [通用测距 API](https://developer.android.google.cn/about/versions/16/features?hl=zh-cn#generic-ranging)
+
+    * [配套设备管理器设备存在情况](https://developer.android.google.cn/about/versions/16/features?hl=zh-cn#device-presence)
+
+* [媒体](https://developer.android.google.cn/about/versions/16/features?hl=zh-cn#media)
+
+    * [改进了照片选择器](https://developer.android.google.cn/about/versions/16/features?hl=zh-cn#photo-picker-improvements)
+
+    * [高级专业视频](https://developer.android.google.cn/about/versions/16/features?hl=zh-cn#apv)
+
+* [隐私设置](https://developer.android.google.cn/about/versions/16/features?hl=zh-cn#privacy)
+
+    * [健康数据共享更新](https://developer.android.google.cn/about/versions/16/features?hl=zh-cn#health-connect)
+
+    * [Privacy Sandbox on Android](https://developer.android.google.cn/about/versions/16/features?hl=zh-cn#privacy-sandbox)
+
+* [安全](https://developer.android.google.cn/about/versions/16/features?hl=zh-cn#security)
+
+    * [密钥共享 API](https://developer.android.google.cn/about/versions/16/features?hl=zh-cn#key-sharing)
+
+* [设备规格](https://developer.android.google.cn/about/versions/16/features?hl=zh-cn#device-form-factors)
+
+    * [电视的标准化画质和音质框架](https://developer.android.google.cn/about/versions/16/features?hl=zh-cn#media-quality-apis)
+
+* [国际化](https://developer.android.google.cn/about/versions/16/features?hl=zh-cn#i18n)
+
+    * [竖排文字](https://developer.android.google.cn/about/versions/16/features?hl=zh-cn#vertical-text)
+
+    * [自定义度量衡制](https://developer.android.google.cn/about/versions/16/features?hl=zh-cn#measurement-systems)
+
+#### 行为更变
+
+* [针对所有应用的行为变更](https://developer.android.google.cn/about/versions/16/behavior-changes-all?hl=zh-cn)
+
+    * [核心功能](https://developer.android.google.cn/about/versions/16/behavior-changes-all?hl=zh-cn#core)
+
+        * [JobScheduler 配额优化](https://developer.android.google.cn/about/versions/16/behavior-changes-all?hl=zh-cn#job-quota-opt)
+
+        * [已放弃的空作业停止原因](https://developer.android.google.cn/about/versions/16/behavior-changes-all?hl=zh-cn#abandoned-job-stop-reason)
+
+        * [有序广播优先级范围不再是全局](https://developer.android.google.cn/about/versions/16/behavior-changes-all?hl=zh-cn#ordered-broadcast-priority)
+
+        * [ART 内部变更](https://developer.android.google.cn/about/versions/16/behavior-changes-all?hl=zh-cn#art-changes)
+
+        * [16 KB 页面大小兼容模式](https://developer.android.google.cn/about/versions/16/behavior-changes-all?hl=zh-cn#16-kb-compatibility-mode)
+
+    * [用户体验和系统界面](https://developer.android.google.cn/about/versions/16/behavior-changes-all?hl=zh-cn#ux-sysui)
+
+        * [弃用干扰性无障碍功能公告](https://developer.android.google.cn/about/versions/16/behavior-changes-all?hl=zh-cn#disruptive-a11y)
+
+        * [支持“三按钮”导航](https://developer.android.google.cn/about/versions/16/behavior-changes-all?hl=zh-cn#three-button-predictive-back)
+
+    * [设备规格](https://developer.android.google.cn/about/versions/16/behavior-changes-all?hl=zh-cn#large-screens-form-factors)
+
+        * [虚拟设备所有者替换](https://developer.android.google.cn/about/versions/16/behavior-changes-all?hl=zh-cn#virtual-device-owner-overrides)
+
+    * [安全](https://developer.android.google.cn/about/versions/16/behavior-changes-all?hl=zh-cn#security)
+
+        * [安全性更强，可防范 Intent 重定向攻击](https://developer.android.google.cn/about/versions/16/behavior-changes-all?hl=zh-cn#intent-redirect-attacks)
+
+        * [不再向配套应用通知发现超时](https://developer.android.google.cn/about/versions/16/behavior-changes-all?hl=zh-cn#companion-device-timeout)
+
+    * [连接](https://developer.android.google.cn/about/versions/16/behavior-changes-all?hl=zh-cn#connectivity)
+
+        * [改进了债券丢失处理](https://developer.android.google.cn/about/versions/16/behavior-changes-all?hl=zh-cn#improved-bond-loss-handling)
+
+    * [针对 targetSdkVersion 36+ 应用的行为变更](https://developer.android.google.cn/about/versions/16/behavior-changes-16?hl=zh-cn)
+
+    * [用户体验和系统界面](https://developer.android.google.cn/about/versions/16/behavior-changes-16?hl=zh-cn#ux-sysui)
+
+        * [无边框设计选择退出功能即将停用](https://developer.android.google.cn/about/versions/16/behavior-changes-16?hl=zh-cn#edge-to-edge)
+
+        * [预测性返回需要迁移或选择停用](https://developer.android.google.cn/about/versions/16/behavior-changes-16?hl=zh-cn#predictive-back)
+
+        * [优雅字体 API 已弃用并停用](https://developer.android.google.cn/about/versions/16/behavior-changes-16?hl=zh-cn#elegant-text-height)
+
+    * [核心功能](https://developer.android.google.cn/about/versions/16/behavior-changes-16?hl=zh-cn#core)
+
+        * [固定费率工作安排优化](https://developer.android.google.cn/about/versions/16/behavior-changes-16?hl=zh-cn#schedule-at-fixed-rate)
+
+    * [设备规格](https://developer.android.google.cn/about/versions/16/behavior-changes-16?hl=zh-cn#large-screens-form-factors)
+
+        * [自适应布局](https://developer.android.google.cn/about/versions/16/behavior-changes-16?hl=zh-cn#adaptive-layouts)
+
+    * [健康与健身](https://developer.android.google.cn/about/versions/16/behavior-changes-16?hl=zh-cn#health-fitness)
+
+        * [健康与健身权限](https://developer.android.google.cn/about/versions/16/behavior-changes-16?hl=zh-cn#health-fitness-permissions)
+
+    * [连接](https://developer.android.google.cn/about/versions/16/behavior-changes-16?hl=zh-cn#connectivity)
+
+        * [用于处理绑定丢失和加密更改的新 intent](https://developer.android.google.cn/about/versions/16/behavior-changes-16?hl=zh-cn#new-intents-to-handle-bond-loss)
+
+        * [移除蓝牙绑定的新方式](https://developer.android.google.cn/about/versions/16/behavior-changes-16?hl=zh-cn#bond-removal-api)
+
+    * [安全](https://developer.android.google.cn/about/versions/16/behavior-changes-16?hl=zh-cn#security)
+
+        * [MediaStore 版本锁定](https://developer.android.google.cn/about/versions/16/behavior-changes-16?hl=zh-cn#mediastore-lockdown)
+
+        * [更安全的 intent](https://developer.android.google.cn/about/versions/16/behavior-changes-16?hl=zh-cn#safer-intents)
+
+    * [隐私设置](https://developer.android.google.cn/about/versions/16/behavior-changes-16?hl=zh-cn#privacy)
+
+        * [本地网络权限](https://developer.android.google.cn/about/versions/16/behavior-changes-16?hl=zh-cn#local-network-permission)
+
+        * [应用拥有的照片](https://developer.android.google.cn/about/versions/16/behavior-changes-16?hl=zh-cn#owned-photos)
+
+#### 相关资源
+
+*  适配简介
+
+    * [Android 16 新特性和行为变更一览](https://blog.csdn.net/guolin_blog/article/details/148748307)
+
+    * [Android 16 Baklava 来了，来看看开发者预览版给我们带来了什么](https://juejin.cn/post/7449932238583513138)
+
+    * [Android 16 开发者全解读](https://juejin.cn/post/7524161016768036874)
+
+    * [关于 Android 16 你想知道的都在这里](https://juejin.cn/post/7452632431780233256)
+
+    * [Android 16 适配指南](https://juejin.cn/post/7529722916289249290)
+
+* 厂商适配指南
+
+    * [OPPO 开放平台 - Android 16 应用兼容性适配指导](https://open.oppomobile.com/documentation/page/info?id=13346)
+
+    * [VIVO 开放平台 - Android 16 开发者适配文档](https://dev.vivo.com.cn/documentCenter/doc/832)
+
+    * [小米开放平台 - Android 16 应用适配指南](https://dev.mi.com/xiaomihyperos/documentation/detail?pId=2035)
+
+    * [荣耀开放平台 - Android 16 应用兼容性适配指导](https://developer.honor.com/cn/docs/adaptation_guide/guides/android_16_compatibility_adaptation_guide)
+
+* 其他适配
+
+    * [速学 Android 16 新功能：带有进度的通知类型](https://juejin.cn/post/7490850417976262668)
+
+    * [关于 Android16 MOPS 函数指令非法问题](https://juejin.cn/post/7532324493581418506)
 
 ## Android 15.0
 
@@ -340,6 +539,8 @@ if (context.getApplicationInfo().targetSdkVersion >= Build.VERSION_CODES.VANILLA
 
     * [Android 15 的新功能与适配](https://www.cnblogs.com/bluestorm/p/18198389)
 
+    * [Android 15 应用适配指南](https://juejin.cn/post/7524231197959847951)
+
 * 厂商适配指南
 
     * [OPPO 开放平台 - Android 15 应用兼容性适配指导](https://open.oppomobile.com/new/developmentDoc/info?id=13047)
@@ -372,7 +573,9 @@ if (context.getApplicationInfo().targetSdkVersion >= Build.VERSION_CODES.VANILLA
 
     * [Android 15 大变更：支持 16K 内存分页，所有 native app 必须重编译](https://juejin.cn/post/7382980041398894627)
 
-    * [Android 15- 16kb页对齐适配大扫盲](https://juejin.cn/post/7395396352182583306)
+    * [Android 15 - 16 kb 页对齐适配大扫盲](https://juejin.cn/post/7395396352182583306)
+
+    * [Android 15 适配 16 kb](https://juejin.cn/post/7545289104378232873)
 
 * 其他适配
 
@@ -1307,7 +1510,9 @@ if (context.getApplicationInfo().targetSdkVersion >= Build.VERSION_CODES.VANILLA
 
     * [androidDataTools](https://github.com/rycysm/androidDataTools)
 
-    * 通过反编译查看其他 App 如何适配：清浊、Es 文件浏览器、FV 文件管理器、安卓清理君
+    * [Android-FileExplorerDemo](https://github.com/MagicianGuo/Android-FileExplorerDemo)
+
+    * 通过反编译查看其他 App 如何适配：清浊、Es 文件浏览器、留舟文件、FV 文件管理器、安卓清理君
 
 * 其他适配
 
