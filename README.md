@@ -981,9 +981,15 @@ if (context.getApplicationInfo().targetSdkVersion >= Build.VERSION_CODES.BAKLAVA
 
     * [荣耀开放平台 - Android 13 应用兼容性适配指导](https://developer.honor.com/cn/docs/adaptation_guide/guides/google_t_compatibility_adaptation_guide)
 
-* 其他适配
+* 媒体适配
 
     * [Android 13 权限适配方案](https://github.com/getActivity/XXPermissions)
+
+    * [浅尝 Android 13 Photo Picker 无惧权限烦恼](https://liarrdev.github.io/post/Try-Photo-Picker-on-Android-13-without-Permission-Hassles/)
+
+    * [Android 13 媒体权限适配指南](https://juejin.cn/post/7159999910748618766)
+
+* 其他适配
 
     * [Android 13 针对 Intent filters 安全的再加强](https://juejin.cn/post/7099450024525824037)
 
@@ -992,8 +998,6 @@ if (context.getApplicationInfo().targetSdkVersion >= Build.VERSION_CODES.BAKLAVA
     * [Android 13 新的换行策略和针对日文的优化](https://juejin.cn/post/7099054844404563982)
 
     * [前台服务管理器：如何手动在 Android 13 上「杀死」一个应用](https://neo.sspai.com/post/72283)
-
-    * [Android 13 媒体权限适配指南](https://juejin.cn/post/7159999910748618766)
 
     * [微信 SDK - Android 13-可能存在的问题适配](https://developers.weixin.qq.com/doc/oplatform/Mobile_App/Access_Guide/Android.html#jump3)
 
