@@ -577,9 +577,15 @@ if (context.getApplicationInfo().targetSdkVersion >= Build.VERSION_CODES.BAKLAVA
 
     * [Android 15 适配 16 kb](https://juejin.cn/post/7545289104378232873)
 
-* 其他适配
+* compileSdk 35 编译环境适配
+
+    * [Android 出海实战：Android15适配保姆级教程！](https://juejin.cn/post/7509432602890649641)
+
+    * [Android 15 适配之世上本无坑，targetSdkVersion 升到35后全是坑](https://juejin.cn/post/7584295332340858943)
 
     * [升级 compileSdk Android 35 导致编译错误](https://stackoverflow.com/questions/78678063/android-15-update-compilesdk-android-35-cause-an-error-res-table-type-type-e)
+
+* 其他适配
 
     * [关于 Android15 GKI2407R40 导致梆梆加固软件崩溃](https://juejin.cn/post/7436662001802002484)
 
